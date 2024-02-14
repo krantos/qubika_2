@@ -38,6 +38,8 @@ if everything goes fine, you should get a green test and the report being automa
 
 To not get any surprises here are a list of possible failures
 
+1. Validate that you have the correct url to the web project and the api project
+
 1. Visual regression testing does not match the computer in which the test is running.
 
    - Delete the images in the folder
