@@ -5,11 +5,11 @@ const apiHelper = {
   email: process.env.API_EMAIL || "foobar_mail",
   username: process.env.API_USERNAME || "foobar_username",
   secret: process.env.API_SECRET || "foobar_password",
-  login: base + "auth/login",
-  register: base + "auth/register",
+  login: base + "api/auth/login",
+  register: base + "api/auth/register",
   category: {
-    create: base + "category-type/create",
-    getAll: base + "category-type",
+    create: base + "api/category-type/create",
+    getAll: base + "api/category-type",
   },
 };
 
