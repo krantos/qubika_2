@@ -8,13 +8,13 @@
 
 1. Have installed **Node 21.0** or above
 
-1. Copy the `.env.example` to `.env.staging` and use set the staging values
+2. Copy the `.env.example` to `.env.staging` and use set the staging values
 
 ```
 cp .env.example .env.staging
 ```
 
-1. Then execute
+3. Then execute
 
 ```
  yarn install
