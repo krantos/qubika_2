@@ -22,14 +22,16 @@ test.beforeAll(async ({ request }) => {
   });
   const data = await response.json();
   auth = "Bearer " + data.token;
-
 });
 
 test.describe("Suite 1", () => {
-  test("Create new User and a new category and a sub-category", async ({ request, page }) => {
+  test("Create new User and a new category and a sub-category", async ({
+    request,
+    page,
+  }) => {
     const loginView = new Login(page);
     const data = {
-      email: 'email' + Date.now() + '@qubika.com',
+      email: "email" + Date.now() + "@qubika.com",
       password: "12345678",
       roles: ["ROLE_ADMIN"],
     };
@@ -59,9 +61,9 @@ test.describe("Suite 1", () => {
 
     await loginView.goto();
     // Validate login using visual regression testing
-		await expect(page).toHaveScreenshot();
+    await expect(page).toHaveScreenshot();
 
-		// Validating login by using it
+    // Validating login by using it
     await loginView.setEmail(userData.email);
     await loginView.setPassword(data.password);
     await loginView.clickSubmit();
@@ -80,9 +82,9 @@ test.describe("Suite 1", () => {
     // due to have a present bug on the Category view
     // I prefer to have a soft assert and not fail
     // the test.
-    await expect.soft(
-      page.locator(`//td[text()="${newCategoryName}"]`)
-    ).toBeInViewport();
+    await expect
+      .soft(page.locator(`//td[text()="${newCategoryName}"]`))
+      .toBeInViewport();
 
     // Validate the new category using the API
     response = await request.get(apiHelper.category.getAll, {
@@ -102,13 +104,13 @@ test.describe("Suite 1", () => {
     await addCategoryModal.clickAccept();
 
     await categoryView.goToLastPage();
-    
+
     // due to have a present bug on the Category view
     // I prefer to have a soft assert and not fail
     // the test.
-    await expect.soft(
-      page.locator(`//td[text()="${newCategoryName}"]`)
-    ).toBeInViewport();
+    await expect
+      .soft(page.locator(`//td[text()="${newCategoryName}"]`))
+      .toBeInViewport();
 
     // Validate the new sub-category using the API
     response = await request.get(apiHelper.category.getAll, {
