@@ -7,6 +7,10 @@ const apiHelper = {
 	secret: process.env.API_SECRET || "foobar_password",
 	login: base + "auth/login",
 	register: base + "auth/register",
+	category: {
+		create: base + "category-type/create",
+		getAll: base + "category-type",
+	}
 }
 
 module.exports = { apiHelper };

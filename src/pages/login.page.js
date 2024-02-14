@@ -10,7 +10,7 @@ class Login {
 	}
 
 	async goto() {
-		await this.page.goto('https://club-administration.qa.qubika.com/#/auth/login');
+		await this.page.goto('#/auth/login');
 	}
 
 	async setEmail(email = '') {
@@ -23,8 +23,9 @@ class Login {
 
 	async clickSubmit() {
 		await this.submit.click();
+		await this.page.waitForURL('**/dashboard');
 		return new Dashboard(this.page, this.mobile);
 	}
 }
 
-module.exports = { Login };
+exports.Login = Login;
