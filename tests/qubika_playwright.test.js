@@ -23,8 +23,6 @@ test.beforeAll(async ({ request }) => {
   const data = await response.json();
   auth = "Bearer " + data.token;
 
-	// set email domain to qubika
-	randomEmail({ domain: 'qubika.com' });
 });
 
 test.describe("Suite 1", () => {
