@@ -1,0 +1,12 @@
+node_modules/
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+/src/test_files/
+/test_files/
+
+.env.development
+.env.staging
+.env.production
+
