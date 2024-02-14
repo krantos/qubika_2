@@ -5,16 +5,20 @@
 ### Exercise 2: Playwright
 
 ### Steps to run tests
+1. Clone this repo
+```
+git clone git@github.com:krantos/qubika_2.git
+```
 
-1. Have installed **Node 21.0** or above
+2. Have installed **Node 21.0** or above
 
-2. Copy the `.env.example` to `.env.staging` and use set the staging values
+3. Copy the `.env.example` to `.env.staging` and use set the staging values
 
 ```
 cp .env.example .env.staging
 ```
 
-3. Then execute
+4. Then execute
 
 ```
  yarn install
